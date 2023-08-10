@@ -68,16 +68,13 @@ messageForm.addEventListener('submit', function (event) {
     removeButton.style.marginLeft = '10px';
 
     // creates event listener for the remove button
-    document.addEventListener('click', function (event) {
-        if (event.target && event.target.matches('button[type="button"]')) {
-            // get the parent node (list item) of the clicked remove button
-            const listItem = event.target.parentNode;
-            // console logs the message content before removing it
-            console.log(listItem.textContent, 'You removed this item');
-            // removes the list item (message) from the list
-            listItem.remove();
-        }
-    })
+    removeButton.addEventListener('click', function() {
+        // Get the parent node (list item) of the cliked remove button
+        const listItem = removeButton.parentNode;
+        // remove the list item (message) from the list
+        listItem.remove();
+        console.log(listItem.textContent, "You removed this item");
+    });
     // appends the remve button the the end of newMessage
     newMessage.appendChild(removeButton);
     // appends the list item/new message to the list
