@@ -3,7 +3,7 @@ const today = new Date();
 const thisYear = today.getFullYear();
 // get the year
 const footer = document.querySelector('footer');
-// creates the foother 
+// creates the footer 
 const copyright = document.createElement('p');
 // creates the paragrah in the footer
 const userName = document.querySelector("#name");
@@ -20,7 +20,7 @@ const skillsSection = document.querySelector("#skills");
 // selects the id = 'skills' element
 var skillsList = document.querySelector("ul");
 // selects the <ul> element within the skillsSection
-for (var i = 0; i < skills.length; i++){
+for (var i = 0; i < skills.length; i++) {
     const skill = document.createElement("li");
     skill.innerText = skills[i];
     skillsList.appendChild(skill);
@@ -29,3 +29,56 @@ for (var i = 0; i < skills.length; i++){
 
 /* I know that this might be overkill on commenting but I am trying to establish good habits
 by forcing myself to comment everything, because I have a very bad habit of forgetting to comment at all*/
+
+const messageForm = document.forms.leave_message;
+
+// event listener for the submit button
+messageForm.addEventListener('submit', function (event) {
+    // prevent default submission
+    event.preventDefault();
+    // store input values into variables
+    const usersNameInput = event.target.usersName.value;
+    // select the first letter of userNameInput ant capitalize it
+    const capitalizedUserName = usersNameInput.charAt(0).toUpperCase() + usersNameInput.slice(1);
+    // stores value of userEmailInput
+    const usersEmailInput = event.target.usersEmail.value;
+    // stores value of userMessageInput
+    const usersMessageInput = event.target.usersMessage.value;
+    // console log each input field
+    console.log('Users Name:', capitalizedUserName);
+    console.log('Users Email', usersEmailInput);
+    console.log('Users Message', usersMessageInput);
+
+    // stores the id="messages"
+    const messageSection = document.querySelector("#messages");
+    // stores messageSection unorderd list
+    const messageList = messageSection.querySelector('ul');
+    // creates new list item variable
+    const newMessage = document.createElement('li');
+
+    // changes innerHTML of newMessages to display capitalizedUserName as a link followed by usersMessageInput and the remove button
+    newMessage.innerHTML = `<a href="mailto:${usersEmailInput}">${capitalizedUserName}</a> wrote: <span>${usersMessageInput}</span>`;
+    // creates the remove button
+    const removeButton = document.createElement('button');
+    // sets intterText
+    removeButton.innerText = ("remove");
+    // sets attribute type
+    removeButton.setAttribute('type', 'button');
+    // adds 10px margin for spacing
+    removeButton.style.marginLeft = '10px';
+
+    // creates event listener for the remove button
+    removeButton.addEventListener('click', function() {
+        // Get the parent node (list item) of the cliked remove button
+        const listItem = removeButton.parentNode;
+        // remove the list item (message) from the list
+        listItem.remove();
+        console.log(listItem.textContent, "You removed this item");
+    });
+    // appends the remve button the the end of newMessage
+    newMessage.appendChild(removeButton);
+    // appends the list item/new message to the list
+    messageList.appendChild(newMessage);
+    // resets the input fields after submit event
+    messageForm.reset();
+});

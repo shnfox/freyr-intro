@@ -50,9 +50,35 @@
         <!-- end of connect section -->
     </div>
     <!-- end main div -->
+    <!-- start of empty sectoin -->
+    <section>
+        <h2>Leave a Message</h2>
+        <!-- start of form element -->
+        <form action="" name="leave_message">
+            <!-- Label for users name -->
+            <label for="uName">Your Name:</label><br>
+            <!-- input field for usersName -->
+            <input type="text" id="uName" name="usersName" required><br>
+            <!-- label for usersEmail -->
+            <label for="uEmail">Your Email:</label><br>
+            <!-- input field for userEmail -->
+            <input type="email" id="uEmail" name="usersEmail" required><br>
+            <!-- label for usersMessage -->
+            <label for="uMessage">Your Message:</label><br>
+            <!-- text area for usersMessage -->
+            <textarea name="usersMessage" id="uMessage" cols="30" rows="10" required></textarea><br>
+            <!-- submit button -->
+            <button type="submit">Submit</button>
+        </form>
+        <!-- end of form element -->
+    </section>
+    <!-- start of messages section -->
+    <section id="messages">
+        <h2>Messages</h2>
+        <ul></ul>
+    </section>
     <!-- start of footer section -->
     <footer>
-
     </footer>
     <!-- end of footer section -->
     <script src="js/index.js"></script>
