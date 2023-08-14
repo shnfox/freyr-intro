@@ -66,6 +66,8 @@ messageForm.addEventListener('submit', function (event) {
     removeButton.setAttribute('type', 'button');
     // adds 10px margin for spacing
     removeButton.style.marginLeft = '10px';
+    // assign id to remove buttons
+    removeButton.id='removeButton';
 
     // creates event listener for the remove button
     removeButton.addEventListener('click', function() {
