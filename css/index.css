@@ -5,13 +5,12 @@ body {
 }
 
 h1,
-h2
- {
+h2 {
     font-family: 'Helvetica Neue', sans-serif;
     font-weight: bold;
     color: #555;
     text-align: center;
-    font-size: 18pt;
+    font-size: 1.125rem;
     margin: 0px;
 }
 
@@ -23,29 +22,19 @@ section {
     border-radius: 10px;
 }
 
-#experienceSection p{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
+#experienceSection p {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-style: italic;
 }
 
-#experienceSection h2 {
-    color: 555;
-    font-size: 18pt;
-    margin: 0px;
+
+#skillsSection li {
+    font-size: .85rem;
 }
 
-#skillsSection ul li{
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 10px 0;
-    padding: 10px;
-    background-color: #f7f7f7;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-}
-
-#skillsSection h2 {
-    color: 555;
-    font-size: 18pt;
+#skillsSection li:hover,
+#connectSection li:hover {
+    background-color: aqua;
 }
 
 ul {
@@ -70,20 +59,18 @@ form {
 }
 
 label {
-    font-size: 16px;
+    font-size: .9rem;
     color: green;
 }
 
-input[type="text"],
-input[type="email"],
+form label,
+input,
 textarea {
-    width: 95%;
-    padding: 10px;
-    margin: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 14px;
-    color: #333;
+    width: 99%;
+    padding: 5px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    font-size: .9rem;
 }
 
 button[type="submit"] {
@@ -101,28 +88,20 @@ button[type="submit"]:hover {
     color: black;
 }
 
-#messages ul li{
-    margin: 10px 0;
-    padding: 10px;
-    background-color: #f7f7f7;
-    border: 1px solid #ddd;
-    border-radius: 10px;
+#messages li {
     position: relative;
 }
 
-#removeButton{
+#removeButton {
     background-color: red;
     color: white;
     border-radius: 10px;
-    font-size: 10pt;
+    font-size: .8rem;
     border: none;
     padding: 5px 10px;
-    position: absolute;
-    top: 7px;
-    right: 5px;
-    cursor: pointer;
-
+    float: right;
 }
+
 footer {
     padding: 5px;
     background-color: #333;

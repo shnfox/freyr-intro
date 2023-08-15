@@ -61,7 +61,7 @@ messageForm.addEventListener('submit', function (event) {
     // creates the remove button
     const removeButton = document.createElement('button');
     // sets intterText
-    removeButton.innerText = ("remove");
+    removeButton.innerText = ("Remove");
     // sets attribute type
     removeButton.setAttribute('type', 'button');
     // adds 10px margin for spacing
