@@ -90,6 +90,7 @@ button[type="submit"]:hover {
 
 #messages li {
     position: relative;
+    padding-right: 6rem;
 }
 
 #removeButton {
@@ -99,7 +100,12 @@ button[type="submit"]:hover {
     font-size: .8rem;
     border: none;
     padding: 5px 10px;
-    float: right;
+    position: absolute;
+    right: .5rem;
+    bottom: 0;
+    top: 0;
+    margin: auto 0;
+    height: max-content;
 }
 
 footer {
