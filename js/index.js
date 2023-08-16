@@ -57,15 +57,17 @@ messageForm.addEventListener('submit', function (event) {
     const newMessage = document.createElement('li');
 
     // changes innerHTML of newMessages to display capitalizedUserName as a link followed by usersMessageInput and the remove button
-    newMessage.innerHTML = `<a href="mailto:${usersEmailInput}">${capitalizedUserName}</a> wrote: <span>${usersMessageInput}</span>`;
+    newMessage.innerHTML = `<a href="mailto:${usersEmailInput}">${capitalizedUserName}</a> wrote:<br><br> <span>${usersMessageInput}</span>`;
     // creates the remove button
     const removeButton = document.createElement('button');
     // sets intterText
-    removeButton.innerText = ("remove");
+    removeButton.innerText = ("Remove");
     // sets attribute type
     removeButton.setAttribute('type', 'button');
     // adds 10px margin for spacing
     removeButton.style.marginLeft = '10px';
+    // assign id to remove buttons
+    removeButton.id='removeButton';
 
     // creates event listener for the remove button
     removeButton.addEventListener('click', function() {

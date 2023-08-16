@@ -5,6 +5,7 @@
     <title>Lesson 4-1</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./css/index.css">
 </head>
 <!-- Body -->
 
@@ -26,7 +27,7 @@
                 scary,
                 right? I can't wait to learn as much as I can about as many languages as I can as well.</p>
         </section><!-- about section end -->
-        <section><!-- experiance section start -->
+        <section id="experienceSection"><!-- experiance section start -->
             <h2>Experience</h2>
             <p>I have started an app that keeps track of my record collection. This app helps me have my entire
                 collection
@@ -34,12 +35,12 @@
                 fingertips instead of leafing through a pill of paper to find what I'm looking for. This app has a long
                 way to go but at least there is a framework there that is workable.</p>
         </section><!-- experience section end -->
-        <section><!-- start skills section -->
+        <section id="skillsSection"><!-- start skills section -->
             <h2 id="skills">Skills</h2>
             <ul></ul>
         </section><!-- end skills seciont -->
         <!-- start of connect section -->
-        <section>
+        <section id="connectSection">
             <h2>Connect</h2>
             <ul><!-- list of links for connect -->
                 <li><a href="https://github.com/shnfox">GitHub</a></li>
@@ -58,15 +59,16 @@
             <!-- Label for users name -->
             <label for="uName">Your Name:</label><br>
             <!-- input field for usersName -->
-            <input type="text" id="uName" name="usersName" required><br>
+            <input type="text" id="uName" name="usersName" placeholder="Please enter your name here." required><br>
             <!-- label for usersEmail -->
             <label for="uEmail">Your Email:</label><br>
             <!-- input field for userEmail -->
-            <input type="email" id="uEmail" name="usersEmail" required><br>
+            <input type="email" id="uEmail" name="usersEmail" placeholder="Please enter your email here." required><br>
             <!-- label for usersMessage -->
             <label for="uMessage">Your Message:</label><br>
             <!-- text area for usersMessage -->
-            <textarea name="usersMessage" id="uMessage" cols="30" rows="10" required></textarea><br>
+            <textarea name="usersMessage" id="uMessage" cols="30" rows="10" placeholder="Please type your message here."
+                required></textarea><br>
             <!-- submit button -->
             <button type="submit">Submit</button>
         </form>
