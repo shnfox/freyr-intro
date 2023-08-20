@@ -23,6 +23,7 @@ var skillsList = document.querySelector("ul");
 for (var i = 0; i < skills.length; i++) {
     const skill = document.createElement("li");
     skill.innerText = skills[i];
+    // skill.setAttribute("class", "listItem");
     skillsList.appendChild(skill);
 }
 // loops through the skills array create the <li> for skills
