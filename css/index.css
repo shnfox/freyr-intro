@@ -11,7 +11,7 @@ header {
     left: 0;
     width: 100%;
     background-color: lightgray;
-    padding: 0 0 10px 20px;
+    padding: 0 0 10px 0;
 }
 
 .nav-bar {
@@ -23,7 +23,7 @@ header {
     color: white;
     text-decoration: none;
     display: inline-block;
-    padding: 10px 20px;
+    padding: 10px 10px;
     background-color: green;
     border: 1px solid greenyellow;
     border-radius: 10px;
@@ -92,7 +92,8 @@ section {
     gap: 20px;
 }
 .experience-item{
-    flex: 0 0 cal(50% -20px);
+    display: flex;
+    flex: 0 0 calc(50% -20px);
     background-color: #f7f7f7;
     border: 1px solid #ddd;
     border-radius: 10px;
@@ -233,5 +234,6 @@ footer {
 @media all and (max-width: 500px){
     .nav-bar{
         flex-direction: column;
+        padding-left: 20px;
     }
 }
