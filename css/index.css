@@ -114,6 +114,9 @@ section {
     background-color: aqua;
 }
 
+#projects li:hover{
+    background-color: aqua;
+}
 ul {
     list-style: none;
     padding: 0;

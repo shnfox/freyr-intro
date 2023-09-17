@@ -84,22 +84,12 @@ messageForm.addEventListener('submit', function (event) {
   // resets the input fields after submit event
   messageForm.reset();
 });
-// Create a new XMLHttpRequest object and store it in a variable named githubRequest
-const githubRequest = new XMLHttpRequest();
 
-// Call the open method on your githubRequest object
-githubRequest.open('GET', 'https://api.github.com/users/shnfox/repos');
-
-// Finally, call the send method on your githubRequest object to actually send the request
-githubRequest.send();
-
-// Handle the response from the server
-githubRequest.addEventListener('load', function () {
-  // Check if the request was successful (status code 200)
-  if (githubRequest.status === 200) {
-    // Parse the response and store it in a variable named repositories
-    const repositories = JSON.parse(githubRequest.responseText);
-    // Select the #projects section by id and store it in a variable named projectSection
+// Create a Fetch API request to get GitHub repositories
+fetch('https://api.github.com/users/shnfox/repos')
+  .then(response => response.json())
+  .then(repositories => {
+    // Select the $projects section by id and store it in a variable named projectSection
     const projectSection = document.querySelector('#projects');
     // Query the projectSection to find the <ul> element and store it in a variable named projectList
     const projectList = projectSection.querySelector('ul');
@@ -118,7 +108,7 @@ githubRequest.addEventListener('load', function () {
       // Append the project element to the projectList element
       projectList.appendChild(project);
     }
-  } else {
-    console.error('GitHub API request failed with status code', githubRequest.status);
-  }
-});
+  })
+  .catch(error => {
+    console.error('GitHub API request failed with error:', error);
+  })
