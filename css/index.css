@@ -12,6 +12,7 @@ body {
     font-size: 1.5rem;
     cursor: pointer;
     padding: 10px;
+    color: aqua;
 }
 header {
     position: sticky;
