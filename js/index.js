@@ -14,6 +14,14 @@ copyright.innerHTML = "\u00A9 " + myName + " " + thisYear;
 // adds text of copyright symbol, name, and year
 footer.appendChild(copyright)
 // appends the copyright.innerHTML to the footer
+const hamburgerButton = document.getElementById('hamburger-button');
+// selects the hamburger button
+const navBar = document.querySelector('.nav-bar');
+// selects the nav-bar element
+hamburgerButton.addEventListener('click', () => {
+  navBar.classList.toggle('show-nav');
+});
+// creates event listener to add show-nav to the nav-bar
 var skills = ["HTML", "CSS", "JavaScript", "React", "node.js"];
 // creates an array called skills
 const skillsSection = document.querySelector("#skills");
@@ -87,7 +95,13 @@ messageForm.addEventListener('submit', function (event) {
 
 // Create a Fetch API request to get GitHub repositories
 fetch('https://api.github.com/users/shnfox/repos')
-  .then(response => response.json())
+  // .then(response => response.json())
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response not ok');
+    }
+    return response.json();
+  })
   .then(repositories => {
     // Select the $projects section by id and store it in a variable named projectSection
     const projectSection = document.querySelector('#projects');
@@ -111,4 +125,4 @@ fetch('https://api.github.com/users/shnfox/repos')
   })
   .catch(error => {
     console.error('GitHub API request failed with error:', error);
-  })
+  });
