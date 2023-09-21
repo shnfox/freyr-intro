@@ -35,9 +35,6 @@ for (var i = 0; i < skills.length; i++) {
 }
 // loops through the skills array create the <li> for skills
 
-/* I know that this might be overkill on commenting but I am trying to establish good habits
-by forcing myself to comment everything, because I have a very bad habit of forgetting to comment at all*/
-
 const messageForm = document.forms.leave_message;
 
 // event listener for the submit button
@@ -126,3 +123,4 @@ fetch('https://api.github.com/users/shnfox/repos')
   .catch(error => {
     console.error('GitHub API request failed with error:', error);
   });
+  // catches error to console
